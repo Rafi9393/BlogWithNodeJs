@@ -1,0 +1,262 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e1e1e1;
+    background-color: #121212;
+}
+
+.hero {
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    background-image: linear-gradient(to bottom, #212121, #1e1e1e);
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.divider {
+    height: 4px;
+    background-color: #444;
+}
+
+.blog-posts {
+    padding: 40px 0;
+}
+
+.post {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    /* Dodajemy odstęp między przyciskami */
+}
+
+.btn-custom {
+    padding: 10px 20px;
+    background-color: #444;
+    color: #e1e1e1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    /* Dodajemy elastyczność dla przycisków */
+    max-width: 200px;
+    /* Ustawiamy maksymalną szerokość przycisków */
+}
+
+.btn-custom:hover {
+    background-color: #555;
+}
+
+
+.post-list {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-list .btn {
+    margin-left: 10px;
+    background-color: #444;
+    color: #e1e1e1;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.post-list .btn:hover {
+    background-color: #555;
+}
+
+.post-list .d-flex {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10%;
+    /* Dodane odstępy między przyciskami */
+}
+
+button.btn-remove {
+    color: red !important;
+}
+
+.post-img {
+    width: 60%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.post-content {
+
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.sidebar {
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+}
+
+.post-preview {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.post-preview-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.post-preview-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.post-preview-date {
+    font-size: 14px;
+    color: #bbb;
+}
+
+footer {
+    background-color: #212121;
+    color: #bbb;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+.add-coment-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+    background-color: #121212;
+    color: #e1e1e1;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: calc(100% - 22px);
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.form-group:first-child {
+    margin-right: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #444;
+    color: #e1e1e1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.comments-section {
+    margin-top: 40px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.comments-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e1e1e1;
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.comment-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e1e1e1;
+}
+
+.comment-date {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.comment-text {
+    font-size: 16px;
+    color: #e1e1e1;
+}
