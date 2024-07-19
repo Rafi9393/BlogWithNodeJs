@@ -1,0 +1,9 @@
+# Węzłowe pliki i foldery
+node_modules/
+npm-debug.log
+.env
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
