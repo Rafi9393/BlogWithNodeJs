@@ -15,6 +15,16 @@ app.get("/create", (req,res) => {
     res.render("create.ejs");
 });
 
+app.post("/submit-form", (req, res) => {
+    const { title, content, image } = req.body;
+    postData.push({
+        imagePath: image,
+        postTitle: title,
+        postContent: content
+    });
+    res.render("index.ejs", {postData: postData});
+});
+
 app.listen(port, ()=>{
     console.log(`App listening on port ${port}`);
 });
