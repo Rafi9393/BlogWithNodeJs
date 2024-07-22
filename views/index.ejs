@@ -4,22 +4,20 @@
     <section class="blog-posts">
         <div class="container">
             <div class="row">
+                <% if (postData && postData.length > 0) { %>
+                    <% postData.forEach(post => { %>
                 <div class="col-lg-4">
                     <article class="post">
-                        <img src="img/imge1.jpg" alt="Image 1" class="post-img">
-                        <h2 class="post-title">Test spieniaczy do mleka - jaki wybrać?</h2>
-                        <p class="post-content">Ręczny czy elektryczny? I jak ich używać? Tutaj zawiera się kolejna część tekstu tego posta. Tekst ten ma na celu wypełnienie strony tak by można było zobacyzć większy kafel. Tekstu było za mało, więc autor postanowił dopisać coniecco poniżej, i to jest ta cześć która właśnie została dopisana. Szybko dopisana...</p>
+                        <img src="img/<%= post.imagePath %>" alt=<%= post.imagePath %> class="post-img">
+                        <h2 class="post-title"><%= post.postTitle %></h2>
+                        <p class="post-content"><%= post.postContent %></p>
                         <a href="#" class="btn btn-primary">Read more</a>
                     </article>
                 </div>
-                <div class="col-lg-4">
-                    <article class="post">
-                        <img src="img/imge1.jpg" alt="Image 1" class="post-img">
-                        <h2 class="post-title">Test spieniaczy do mleka - jaki wybrać?</h2>
-                        <p class="post-content">Ręczny czy elektryczny? I jak ich używać? Tutaj zawiera się kolejna część tekstu tego posta. Tekst ten ma na celu wypełnienie strony tak by można było zobacyzć większy kafel. Tekstu było za mało, więc autor postanowił dopisać coniecco poniżej, i to jest ta cześć która właśnie została dopisana. Szybko dopisana...</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
-                    </article>
-                </div>
+            <% });} else {%>
+                <h2>Brak postów do wyśietlenia</h2>
+            <% } %>
+                
             </div>
         </div>
     </section>
