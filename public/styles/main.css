@@ -276,3 +276,14 @@ button:hover {
     font-size: 16px;
     color: #e1e1e1;
 }
+
+.no-style-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.no-style-link:hover {
+    color:#bbb;
+    text-decoration: none;
+}
