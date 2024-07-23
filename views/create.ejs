@@ -1,26 +1,47 @@
 <%- include("partials/header.ejs") %>
 <main class="mb-5">
     <div class="container mt-4">
-        <h2>Dodaj nowy post</h2>
+        <h2><%= post ? 'Edytuj post' : 'Dodaj nowy post' %></h2>
         <form id="postForm" class="add-comment-form" action="/submit-form" method="POST">
+            <% if (post) { %>
+                <input type="hidden" name="id" value="<%= post.id %>">
+            <% } %>
             <div class="form-group">
                 <label for="title">Tytuł:</label>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="title" name="title" value="<%= post ? post.postTitle : '' %>" required>
             </div>
             <div class="form-group">
                 <label for="content">Treść:</label>
-                <textarea id="content" name="content" rows="8" required></textarea>
+                <textarea id="content" name="content" rows="8" required><%= post ? post.postContent : '' %></textarea>
             </div>
             <div class="form-group">
                 <label for="image">Zdjęcie (URL):</label>
-                <input type="text" id="image" name="image">
+                <input type="text" id="image" name="image" value="<%= post ? post.imagePath : '' %>">
             </div>
             <div class="button-group d-flex justify-content-between">
-                <button type="submit" class="btn btn-custom">Zapisz Post</button>
+                <button type="submit" class="btn btn-custom"><%= post ? 'Zapisz zmiany' : 'Zapisz Post' %></button>
                 <button type="button" class="btn btn-custom">Podgląd</button>
             </div>
         </form>
     </div>
+    <div class="container mt-4">
+        <h2>Lista Postów</h2>
+        <% if (postData && postData.length > 0) { %>
+            <% postData.forEach(post => { %>
+            <div class="post-list">
+                <h3 class="post-title"><%= post.postTitle %></h3>
+                <div class="d-flex justify-content-end">
+                    <a href="/read-post/<%= post.id %>"><button class="btn btn-sm">Podgląd</button></a>
+                    <a href="/edit-post/<%= post.id %>"><button class="btn btn-sm">Edycja</button></a>
+                    <a href="/delete-post/<%= post.id %>"><button class="btn btn-sm btn-remove">Usuń</button></a>
+                </div>
+            </div>
+            <% }); %>
+        <% } else { %>
+            <div class="post-list">
+                <p>No posts!</p>
+            </div>
+        <% } %>
+    </div>
 </main>
-
 <%- include("partials/footer.ejs") %>

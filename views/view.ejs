@@ -16,7 +16,7 @@
 
                         <div class="mt-5 add-coment">
                             <p class="add-coment-header">Dodaj komentarz</p>
-                            <form id="commentForm">
+                            <form id="commentForm" action="/submit-comment" method="POST">
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="name">Imię:</label>
@@ -31,38 +31,37 @@
                                     <label for="comment">Komentarz:</label>
                                     <textarea id="comment" name="comment" rows="5" required></textarea>
                                 </div>
+                                <input type="hidden" name="postId" id="postId" value="<%= post.id %>">
                                 <button type="submit">Dodaj Komentarz</button>
                             </form>
                         </div>
 
                         <div class="comments-section">
                             <h3 class="comments-header">Komentarze</h3>
-                            <% if (commentData && commentData.length> 0) { %>
-                                <% commentData.forEach(comment=> { %>
-                                    <% if (comment.postId==post.id) { %>
-
+                            <% if (commentData && commentData.length > 0) { %>
+                                <% let hasComments = false; %>
+                                <% commentData.forEach(comment => { %>
+                                    <% if (comment.postId == post.id) { %>
+                                        <% hasComments = true; %>
                                         <div class="comment">
-                                            <p class="comment-name">
-                                                <%= comment.commentName %>
-                                            </p>
-                                            <p class="comment-date">
-                                                <%= comment.commentDate %>
-                                            </p>
-                                            <p class="comment-text">
-                                                <%= comment.commentContent%>
-                                            </p>
+                                            <p class="comment-name"><%= comment.commentName %></p>
+                                            <p class="comment-date"><%= comment.commentDate %></p>
+                                            <p class="comment-text"><%= comment.commentContent %></p>
                                         </div>
-
-                                        <% } else { %>
-                                            <div class="comment">
-                                                <p>Comments not found</p>
-                                            </div>
-                                            <% } }); } else {%>
-                                                <div class="comment">
-                                                    <p>Comments not found</p>
-                                                </div>
-                                                <% } %>
+                                    <% } %>
+                                <% }); %>
+                                <% if (!hasComments) { %>
+                                    <div class="comment">
+                                        <p>Comments not found</p>
+                                    </div>
+                                <% } %>
+                            <% } else { %>
+                                <div class="comment">
+                                    <p>Comments not found</p>
+                                </div>
+                            <% } %>
                         </div>
+                        
 
                     </div>
                     <div class="col-lg-4">
